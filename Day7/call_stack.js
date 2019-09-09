@@ -1,8 +1,8 @@
 function x() {
     setTimeout(function () {
         console.log("executed after 5 seconds")
-    }, 5000);
-    console.log( "hello");
+    }, 0);
+    console.log("hello");
 }
 
 function y() {
@@ -10,8 +10,9 @@ function y() {
 }
 
 function z() {
-    y ();
+    y();
 }
 
 
 z();
+console.log("not sure when this will be executed")
