@@ -23,10 +23,11 @@
                     return compileJokes(num, callback, arr);
                 });
             }
+            function callbackJokeFunc(jokeArray) {
+                console.log(jokeArray);
+            }
             document.querySelector("#button").addEventListener("click", () => {
-                compileJokes(10, (data) => {
-                    console.log(data);
-                });
+                compileJokes(10, callbackJokeFunc)
             });
     </script>
 </body>

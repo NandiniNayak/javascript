@@ -2,40 +2,26 @@
 <html>
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Document</title>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <button id="button">Get Jokes</button>
     <script>
-        document.getElementById("button").addEventListener("click", () => {
-             let jokes = [];
-            $.getJSON("https://icanhazdadjoke.com/", (dadJoke) => {
-                jokes.push(dadJoke.joke);
-                console.log(dadJoke.joke);
+        document.querySelector("#button").addEventListener("click", () => {
+            $.get("https://api.chucknorris.io/jokes/random", (joke1) => {
+                $.get("https://api.chucknorris.io/jokes/random", (joke2) => {
+                    $.get("https://api.chucknorris.io/jokes/random", (joke3) => {
+                        $.get("https://api.chucknorris.io/jokes/random", (joke4) => {
+                            $.get("https://api.chucknorris.io/jokes/random", (joke5) => {
+                                let jokeArray = [joke1, joke2, joke3, joke4, joke5];
+                                console.log(jokeArray);
+                            });
+                        });
+                    });
+                });
             });
-            $.getJSON("https://icanhazdadjoke.com/", (dadJoke) => {
-                jokes.push(dadJoke.joke);
-                console.log(dadJoke.joke);
-            });
-            $.getJSON("https://icanhazdadjoke.com/", (dadJoke) => {
-                jokes.push(dadJoke.joke);
-                console.log(dadJoke.joke);
-            });
-            $.getJSON("https://icanhazdadjoke.com/", (dadJoke) => {
-                jokes.push(dadJoke.joke);
-                console.log(dadJoke.joke);
-            });
-            $.getJSON("https://icanhazdadjoke.com/", (dadJoke) => {
-                jokes.push(dadJoke.joke);
-                console.log(dadJoke.joke);
-            });
-            console.log("Jokes", jokes)
         });
     </script>
 </body>
